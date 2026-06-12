@@ -53,7 +53,7 @@ export default function StageTreatment() {
 
     try {
       // 3. Connect to the suggestions endpoint
-      const response = await fetch('http://localhost:5000/get_suggestions', {
+      const response = await fetch('/api/get_suggestions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloadToSend),
