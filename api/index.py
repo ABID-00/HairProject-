@@ -67,6 +67,7 @@ def predict():
         })
 
     except Exception as e:
+        print("🔥 ERROR OCCURRED:", str(e))
         return jsonify({'error': str(e)}), 500
 
 
@@ -88,8 +89,8 @@ def get_suggestions():
         return jsonify({'suggestions': suggestions})
 
     except Exception as e:
+        print("🔥 ERROR OCCURRED:", str(e))
         return jsonify({'error': str(e)}), 500
-
 
 if __name__ == '__main__':
     import os
