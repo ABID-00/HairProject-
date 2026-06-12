@@ -13,21 +13,21 @@ export default function Assessment() {
 
   // Male Cards (Norwood Scale roughly)
   const maleStages = [
-    { id: 1, title: "Stage 1", desc: "Minor recession", img: "https://via.placeholder.com/150?text=Male+Stage+1" },
-    { id: 2, title: "Stage 2", desc: "Triangular recession", img: "https://via.placeholder.com/150?text=Male+Stage+2" },
-    { id: 3, title: "Stage 3", desc: "Deep recession (M shape)", img: "https://via.placeholder.com/150?text=Male+Stage+3" },
-    { id: 4, title: "Stage 4", desc: "Crown hair loss starts", img: "https://via.placeholder.com/150?text=Male+Stage+4" },
-    { id: 5, title: "Stage 5", desc: "Bridge between crown/front narrowing", img: "https://via.placeholder.com/150?text=Male+Stage+5" },
-    { id: 6, title: "Stage 6", desc: "Bridge disappears", img: "https://via.placeholder.com/150?text=Male+Stage+6" },
-    { id: 7, title: "Stage 7", desc: "Only a horseshoe band remains", img: "https://via.placeholder.com/150?text=Male+Stage+7" },
+    { id: 1, title: "Stage 1", desc: "Minor recession", img: "https://assureclinic.com/wp-content/uploads/2024/09/1-1.jpg" },
+    { id: 2, title: "Stage 2", desc: "Triangular recession", img: "https://assureclinic.com/wp-content/uploads/2024/09/2-1.jpg" },
+    { id: 4, title: "Stage 3", desc: "Crown hair loss starts", img: "https://assureclinic.com/wp-content/uploads/2024/09/4-1.jpg" },
+    { id: 3, title: "Stage 4", desc: "Deep recession (M shape)", img: "https://assureclinic.com/wp-content/uploads/2024/09/5-1.jpg" },
+    { id: 5, title: "Stage 5", desc: "Bridge between crown/front narrowing", img: "https://assureclinic.com/wp-content/uploads/2024/09/6-1.jpg" },
+    { id: 6, title: "Stage 6", desc: "Bridge disappears", img: "https://assureclinic.com/wp-content/uploads/2024/09/7.jpg" },
+    { id: 7, title: "Stage 7", desc: "Only a horseshoe band remains", img: "src/assets/stage7Male.png" },
   ];
 
   // Female Cards (Ludwig Scale roughly)
   const femaleStages = [
-    { id: 1, title: "Stage 1", desc: "Mild thinning at the part", img: "https://via.placeholder.com/150?text=Female+Stage+1" },
-    { id: 2, title: "Stage 2", desc: "Increased widening of the part", img: "https://via.placeholder.com/150?text=Female+Stage+2" },
-    { id: 3, title: "Stage 3", desc: "Diffuse thinning across the top", img: "https://via.placeholder.com/150?text=Female+Stage+3" },
-    { id: 4, title: "Stage 4", desc: "Extensive thinning/visible scalp", img: "https://via.placeholder.com/150?text=Female+Stage+4" },
+    { id: 1, title: "Stage 1", desc: "Mild thinning at the part", img: "src/assets/femaleS1.png" },
+    { id: 2, title: "Stage 2", desc: "Increased widening of the part", img: "src/assets/femaleS2.png" },
+    { id: 3, title: "Stage 3", desc: "Diffuse thinning across the top", img: "src/assets/femaleS3.png" },
+    // { id: 4, title: "Stage 4", desc: "Extensive thinning/visible scalp", img: "src/assets/femaleS4.png" },
   ];
 
   const stagesToDisplay = userInfo.gender === 'Male' ? maleStages : femaleStages;

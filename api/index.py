@@ -8,9 +8,11 @@ app = Flask(__name__)
 CORS(app) 
 
 # Load the trained model files
-model = joblib.load('hairfall_model.pkl')
-scaler = joblib.load('scaler.pkl')
-model_columns = joblib.load('model_columns.pkl')
+BASE_DIR = os.path.dirname(__file__)
+
+model = joblib.load(os.path.join(BASE_DIR, "hairfall_model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+model_columns = joblib.load(os.path.join(BASE_DIR, "model_columns.pkl"))
 
 def generate_suggestions(user_data):
     suggestions = []
@@ -31,7 +33,11 @@ def generate_suggestions(user_data):
         
     return suggestions
 
-@app.route('/predict', methods=['POST'])
+@app.route('/')
+def home():
+    return "Flask API is running!"    
+
+@app.route('/api/predict', methods=['POST'])
 def predict():
     try:
         # 1. Get data from React
@@ -65,7 +71,7 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/get_suggestions', methods=['POST'])
+@app.route('/api/get_suggestions', methods=['POST'])
 def get_suggestions():
     try:
         user_data = request.json
@@ -88,4 +94,4 @@ def get_suggestions():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run()
