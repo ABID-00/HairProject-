@@ -23,5 +23,9 @@
             "src": "/(.*)",
             "dest": "/Frontend/index.html"
         }
-    ]
+    ],
+    "rewrites": [{
+        "source": "/(.*)",
+        "destination": "/"
+    }]
 }
