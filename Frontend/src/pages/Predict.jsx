@@ -48,7 +48,7 @@ export default function Predict() {
     }
 
     try {
-      const response = await fetch('/api/predict', {
+      const response = await fetch('https://hairproject.onrender.com/api/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

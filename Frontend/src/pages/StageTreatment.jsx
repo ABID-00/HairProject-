@@ -6,7 +6,7 @@ export default function StageTreatment() {
   const { stageId } = useParams(); // Gets the stage number from the URL
   // 1. Catch the gender passed from Assessment.jsx
   const location = useLocation();
-  const gender = location.state?.gender; 
+  const gender = location.state?.gender || "Unknown"; 
 
   // 2. Check if this is a severe stage requiring a doctor
   const isSevereStage = (gender === 'Male' && (stageId === '7' || stageId === '6')) || (gender === 'Female' && stageId === '4');
@@ -53,7 +53,7 @@ export default function StageTreatment() {
 
     try {
       // 3. Connect to the suggestions endpoint
-      const response = await fetch('/api/get_suggestions', {
+      const response = await fetch('https://hairproject.onrender.com/api/get_suggestions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloadToSend),
